@@ -59,7 +59,7 @@ project
 You'll also have to modify lines 19 and 20 in the driver_m.py file to point to your directories. 
 ![alt text](https://github.com/jamsawamsa/Autism_SLI_textAnalyzer_NLP_ML/blob/master/Images/ReadmeImage1.JPG?raw=true)
 
-You can add additional databases from CHILDES if you want, but you'll have to make sure that they have the correct annotations for the program to work. A lot of databases don't have the same annotation and recording protocols so this requires a little bit of research on your end. Ultimately your goal is to have **both** the xml and plaintext versions of the corpora downloaded and sorted according to their labels.
+You can add additional databases from CHILDES if you want, but you'll have to make sure that they have the correct annotations for the program to work. A lot of databases don't have the same annotation and recording protocols so this requires a little bit of research on your end. Ultimately your goal is to have **both** the xml and plaintext versions of the corpora downloaded and sorted according to their labels in separate subfolders.
 
 ## Workflow
 The general project workflow is like so:
