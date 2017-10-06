@@ -1,0 +1,266 @@
+total labels: 258
+number of TYP: 124, ratio over total: (0.480620)
+number of ASD: 33, ratio over total: (0.127907)
+number of SLI: 101, ratio over total: (0.391473)
+largest population: 124 counts
+therefore the baseline accuracy expected for all estimators is (0.480620) which is equivalent to randomly labelingeverything as the largest population
+training set proportions:  (73, 25, 82)
+test set proportions:  (28, 8, 42)
+--------------------------
+
+Features: 
+0 : total words
+1 : number of different words
+2 : total utterances
+3 : mean length of utterances
+4 : average syllables per word
+5 : flesch kincaid score
+6 : raw verbs vs total verbs
+7 : number of different pos tags
+8 : number of repeated words/phrases
+9 : umber of partial words
+10 : number of filler words
+11 : degree of conversational support
+12 : prosody
+13 : average clauses per sentence
+14 : average left branching depth
+15 : max parse tree height
+16 : language model average uni-gram probability
+17 : language model average bi-gram probability
+18 : language model average tri-gram probability
+19 : language model average 4-gram probability
+--------------------------
+
+Estimator scoring including: cross validation with stratified K-fold sampling (k = 4), mean accuracy, accuracy precision, recall and f-measure
+--------------------------
+Decision Tree: 
+Mean accuracy: 0.73
+Accuracy from CV scoring: 0.77 (+/- 0.08)
+             precision    recall  f1-score   support
+
+        0.0       0.69      0.79      0.73        28
+        1.0       0.56      0.62      0.59         8
+        2.0       0.81      0.71      0.76        42
+
+avg / total       0.74      0.73      0.73        78
+
+Confusion matrix, without normalization
+[[22  2  4]
+ [ 0  5  3]
+ [10  2 30]]
+--------------------------
+
+K-Nearest Neighbor: 
+Mean accuracy: 0.85
+Accuracy from CV scoring: 0.77 (+/- 0.05)
+             precision    recall  f1-score   support
+
+        0.0       0.81      0.89      0.85        28
+        1.0       0.80      0.50      0.62         8
+        2.0       0.88      0.88      0.88        42
+
+avg / total       0.85      0.85      0.84        78
+
+Confusion matrix, without normalization
+[[25  0  3]
+ [ 2  4  2]
+ [ 4  1 37]]
+--------------------------
+
+Gaussian Naive Bayes: 
+Mean accuracy: 0.78
+Accuracy from CV scoring: 0.88 (+/- 0.02)
+             precision    recall  f1-score   support
+
+        0.0       0.77      0.86      0.81        28
+        1.0       0.50      1.00      0.67         8
+        2.0       0.94      0.69      0.79        42
+
+avg / total       0.83      0.78      0.79        78
+
+Confusion matrix, without normalization
+[[24  2  2]
+ [ 0  8  0]
+ [ 7  6 29]]
+--------------------------
+
+Neural Network, Multilayer Perceptron: 
+Mean accuracy: 0.77
+Accuracy from CV scoring: 0.72 (+/- 0.12)
+             precision    recall  f1-score   support
+
+        0.0       0.78      0.89      0.83        28
+        1.0       0.42      0.62      0.50         8
+        2.0       0.88      0.71      0.79        42
+
+avg / total       0.80      0.77      0.78        78
+
+Confusion matrix, without normalization
+[[25  1  2]
+ [ 1  5  2]
+ [ 6  6 30]]
+--------------------------
+
+Support Vector Machine: 
+Mean accuracy: 0.86
+Accuracy from CV scoring: 0.86 (+/- 0.02)
+             precision    recall  f1-score   support
+
+        0.0       0.93      0.93      0.93        28
+        1.0       0.54      0.88      0.67         8
+        2.0       0.92      0.81      0.86        42
+
+avg / total       0.88      0.86      0.87        78
+
+Confusion matrix, without normalization
+[[26  0  2]
+ [ 0  7  1]
+ [ 2  6 34]]
+--------------------------
+
+Ensemble method, Soft Voting: 
+Mean accuracy: 0.81
+Accuracy from CV scoring: 0.86 (+/- 0.02)
+             precision    recall  f1-score   support
+
+        0.0       0.87      0.93      0.90        28
+        1.0       0.46      0.75      0.57         8
+        2.0       0.89      0.74      0.81        42
+
+avg / total       0.84      0.81      0.81        78
+
+Confusion matrix, without normalization
+[[26  0  2]
+ [ 0  6  2]
+ [ 4  7 31]]
+--------------------------
+
+Feature ranking:
+1. feature 11: degree of conversational support (0.132628)
+2. feature 19: language model average 4-gram probability (0.100081)
+3. feature 17: language model average bi-gram probability (0.084798)
+4. feature 5: flesch kincaid score (0.073254)
+5. feature 16: language model average uni-gram probability (0.072596)
+6. feature 9: umber of partial words (0.061225)
+7. feature 8: number of repeated words/phrases (0.061165)
+8. feature 2: total utterances (0.061063)
+9. feature 10: number of filler words (0.054785)
+10. feature 3: mean length of utterances (0.039890)
+11. feature 15: max parse tree height (0.035414)
+12. feature 18: language model average tri-gram probability (0.032863)
+13. feature 1: number of different words (0.029114)
+14. feature 0: total words (0.028547)
+15. feature 13: average clauses per sentence (0.026832)
+16. feature 7: number of different pos tags (0.023377)
+17. feature 12: prosody (0.023130)
+18. feature 6: raw verbs vs total verbs (0.022440)
+19. feature 14: average left branching depth (0.021686)
+20. feature 4: average syllables per word (0.015113)
+--------------------------
+
+Retraining estimators with extracted features only: 
+Estimator scoring including: cross validation with stratified K-fold sampling (k = 4), mean accuracy, accuracy precision, recall and f-measure
+--------------------------
+Decision Tree: 
+Mean accuracy: 0.82
+Accuracy from CV scoring: 0.81 (+/- 0.04)
+             precision    recall  f1-score   support
+
+        0.0       0.81      0.89      0.85        28
+        1.0       0.67      0.75      0.71         8
+        2.0       0.87      0.79      0.82        42
+
+avg / total       0.83      0.82      0.82        78
+
+Confusion matrix, without normalization
+[[25  0  3]
+ [ 0  6  2]
+ [ 6  3 33]]
+--------------------------
+
+K-Nearest Neighbor: 
+Mean accuracy: 0.85
+Accuracy from CV scoring: 0.81 (+/- 0.02)
+             precision    recall  f1-score   support
+
+        0.0       0.81      0.89      0.85        28
+        1.0       0.83      0.62      0.71         8
+        2.0       0.88      0.86      0.87        42
+
+avg / total       0.85      0.85      0.84        78
+
+Confusion matrix, without normalization
+[[25  0  3]
+ [ 1  5  2]
+ [ 5  1 36]]
+--------------------------
+
+Gaussian Naive Bayes: 
+Mean accuracy: 0.58
+Accuracy from CV scoring: 0.90 (+/- 0.00)
+             precision    recall  f1-score   support
+
+        0.0       0.48      0.93      0.63        28
+        1.0       0.73      1.00      0.84         8
+        2.0       0.85      0.26      0.40        42
+
+avg / total       0.70      0.58      0.53        78
+
+Confusion matrix, without normalization
+[[26  0  2]
+ [ 0  8  0]
+ [28  3 11]]
+--------------------------
+
+Neural Network, Multilayer Perceptron: 
+Mean accuracy: 0.78
+Accuracy from CV scoring: 0.72 (+/- 0.10)
+             precision    recall  f1-score   support
+
+        0.0       0.82      0.82      0.82        28
+        1.0       0.36      0.50      0.42         8
+        2.0       0.87      0.81      0.84        42
+
+avg / total       0.80      0.78      0.79        78
+
+Confusion matrix, without normalization
+[[23  2  3]
+ [ 2  4  2]
+ [ 3  5 34]]
+--------------------------
+
+Support Vector Machine: 
+Mean accuracy: 0.76
+Accuracy from CV scoring: 0.82 (+/- 0.03)
+             precision    recall  f1-score   support
+
+        0.0       0.88      0.79      0.83        28
+        1.0       0.35      0.88      0.50         8
+        2.0       0.91      0.71      0.80        42
+
+avg / total       0.84      0.76      0.78        78
+
+Confusion matrix, without normalization
+[[22  3  3]
+ [ 1  7  0]
+ [ 2 10 30]]
+--------------------------
+
+Ensemble method, Soft Voting: 
+Mean accuracy: 0.90
+Accuracy from CV scoring: 0.86 (+/- 0.04)
+             precision    recall  f1-score   support
+
+        0.0       0.90      0.96      0.93        28
+        1.0       0.70      0.88      0.78         8
+        2.0       0.95      0.86      0.90        42
+
+avg / total       0.90      0.90      0.90        78
+
+Confusion matrix, without normalization
+[[27  0  1]
+ [ 0  7  1]
+ [ 3  3 36]]
+--------------------------
+
+Classification report generated in 19.7069 seconds
